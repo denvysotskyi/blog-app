@@ -6,6 +6,12 @@
     Войти в панель администратора
   </h2>
 
+  <div class="alert alert-danger" *ngIf="auth.error$ | async as error">
+    <h4>
+      {{error}}
+    </h4>
+  </div>
+
   <div class="form-control"
        [ngClass]="{ invalid: form.get('email')!.touched && form.get('email')!.invalid }"
   >

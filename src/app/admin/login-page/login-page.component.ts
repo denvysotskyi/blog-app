@@ -16,7 +16,7 @@ export class LoginPageComponent implements OnInit {
   isSubmitted = false
 
   constructor(
-    private auth: AuthService,
+    public auth: AuthService,
     private router: Router
   ) {}
 
@@ -49,6 +49,8 @@ export class LoginPageComponent implements OnInit {
       .subscribe(() => {
         this.form.reset()
         this.router.navigate(['/admin', 'dashboard'])
+        this.isSubmitted = false
+      }, () => {
         this.isSubmitted = false
       })
   }
