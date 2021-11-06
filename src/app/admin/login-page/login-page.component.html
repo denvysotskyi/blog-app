@@ -6,9 +6,19 @@
     Войти в панель администратора
   </h2>
 
-  <div class="alert alert-danger" *ngIf="auth.error$ | async as error">
+  <div class="alert alert-danger"
+       *ngIf="auth.error$ | async as error"
+  >
     <h4>
       {{error}}
+    </h4>
+  </div>
+
+  <div class="alert alert-info"
+       *ngIf="message"
+  >
+    <h4>
+      {{message}}
     </h4>
   </div>
 
