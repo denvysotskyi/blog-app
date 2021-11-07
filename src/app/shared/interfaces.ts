@@ -10,9 +10,12 @@ export interface IFbAuthResponse {
 }
 
 export interface IPost {
-  id?: number
   title: string
   author: string
   text: string
   date: Date
+}
+
+export interface IFbCreateResponse {
+  name: string
 }

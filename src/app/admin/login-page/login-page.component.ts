@@ -23,14 +23,14 @@ export class LoginPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
     this.route.queryParams
       .subscribe((params: Params) => {
         if (params['loginAgain']) {
           this.message = 'Пожалуйста, введите данные'
+        } else if (params['authFailed']) {
+          this.message = 'Сессия истекла. Пожалуйста, введите данные заново'
         }
       })
-
 
     this.form = new FormGroup({
       email: new FormControl('', [
@@ -56,7 +56,7 @@ export class LoginPageComponent implements OnInit {
       password: this.form.value.password
     }
 
-    this.auth.onLogin(user)
+    this.auth.login(user)
       .subscribe(() => {
         this.form.reset()
         this.router.navigate(['/admin', 'dashboard'])

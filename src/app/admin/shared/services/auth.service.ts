@@ -6,7 +6,9 @@ import { catchError, tap } from 'rxjs/operators';
 import { IFbAuthResponse, IUser } from '../../../shared/interfaces';
 import { environment } from '../../../../environments/environment';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
 
   public error$: Subject<string> = new Subject<string>()
@@ -18,22 +20,22 @@ export class AuthService {
     const expDate = new Date(localStorage.getItem('fb-token-exp') as string)
 
     if (new Date() > expDate) {
-      this.onLogout()
+      this.logout()
       return null
     }
     return localStorage.getItem('fb-token')
   }
 
-  onLogin(user: IUser): Observable<any> {
+  login(user: IUser): Observable<any> {
     user.returnSecureToken = true
-    return this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKey}`, user)
+    return this.http.post<any>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKey}`, user)
       .pipe(
         tap(this.setToken as any),
         catchError(this.handleError.bind(this) as any)
       )
   }
 
-  onLogout(): void {
+  logout(): void {
     this.setToken(null)
   }
 
@@ -55,7 +57,6 @@ export class AuthService {
         this.error$.next('Неверное значение пароля')
         break
     }
-
     return throwError(error)
   }
 
