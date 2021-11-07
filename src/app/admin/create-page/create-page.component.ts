@@ -12,7 +12,7 @@ export class CreatePageComponent implements OnInit {
 
   form!: FormGroup
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -39,6 +39,8 @@ export class CreatePageComponent implements OnInit {
       text: this.form.value.text,
       date: new Date()
     }
+
+    console.log(post)
   }
 
 }

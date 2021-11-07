@@ -13,7 +13,7 @@
     </label>
     <input id="title"
            type="text"
-           placeholder="Введите название поста"
+           placeholder="Введите название"
            formControlName="title"
     />
     <div class="validation"
@@ -25,6 +25,15 @@
     </div>
   </div>
 
+  <div class="form-control">
+    <label>
+      Контент поста:
+    </label>
+    <quill-editor formControlName="text">
+
+    </quill-editor>
+  </div>
+
   <div class="form-control"
        [ngClass]="{ invalid: form.get('author')!.touched && form.get('author')!.invalid }"
   >
@@ -33,7 +42,7 @@
     </label>
     <input id="author"
            type="text"
-           placeholder="Введите имя автора поста"
+           placeholder="Введите имя автора"
            formControlName="author"
     />
     <div class="validation"
@@ -43,12 +52,6 @@
         Введите корректное имя автора поста
       </small>
     </div>
-  </div>
-
-  <div class="form-control">
-    <label>
-      Контент поста:
-    </label>
   </div>
 
   <button class="btn btn-block btn-dark"
