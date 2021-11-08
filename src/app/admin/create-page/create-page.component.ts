@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { IPost } from '../../shared/interfaces';
 import { PostService } from '../../shared/post.service';
@@ -13,7 +14,10 @@ export class CreatePageComponent implements OnInit {
 
   form!: FormGroup
 
-  constructor(private postService: PostService) {}
+  constructor(
+    private postService: PostService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -44,6 +48,7 @@ export class CreatePageComponent implements OnInit {
     this.postService.create(post)
       .subscribe(() => {
         this.form.reset()
+        this.router.navigate(['/admin', 'dashboard'])
       })
   }
 

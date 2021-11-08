@@ -13,6 +13,34 @@ export class PostService {
 
   constructor(private http: HttpClient) {}
 
+  getAll(): Observable<IPost[]> {
+    return this.http.get<IPost>(`${environment.fbDbUrl}/posts.json`)
+      .pipe(
+        map((res: { [ key: string]: any }) => {
+          return Object
+            .keys(res)
+            .map(key => ({
+              ...res[key],
+                id: key,
+                date: new Date(res[key].date)
+            }))
+        })
+      )
+  }
+
+  getById(id: string): Observable<IPost> {
+    return this.http.get<IPost>(`${environment.fbDbUrl}/posts/${id}.json`)
+      .pipe(
+        map((post: IPost) => {
+          return {
+            ...post,
+            id,
+            date: new Date(post.date)
+          }
+        })
+      )
+  }
+
   create(post: IPost): Observable<IPost> {
     return this.http.post<any>(`${environment.fbDbUrl}/posts.json`, post)
       .pipe(
@@ -26,19 +54,8 @@ export class PostService {
       )
   }
 
-  getAll(): Observable<IPost[]> {
-    return this.http.get<any>(`${environment.fbDbUrl}/posts.json`)
-      .pipe(
-        map((res: { [ key: string]: any }) => {
-          return Object
-            .keys(res)
-            .map(key => ({
-              ...res[key],
-                id: key,
-                date: new Date(res[key].date)
-            }))
-        })
-      )
+  update(post: IPost): Observable<IPost> {
+    return this.http.patch<IPost>(`${environment.fbDbUrl}/posts/${post.id}.json`, post)
   }
 
   remove(id?: string): Observable<void> {
