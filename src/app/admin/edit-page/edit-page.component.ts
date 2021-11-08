@@ -5,6 +5,7 @@ import { switchMap } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
 import { PostService } from '../../shared/post.service';
+import { AlertService } from '../shared/services/alert.service';
 import { IPost } from '../../shared/interfaces';
 
 @Component({
@@ -23,7 +24,8 @@ export class EditPageComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private postService: PostService
+    private postService: PostService,
+    private alert: AlertService
   ) {}
 
   ngOnInit(): void {
@@ -71,6 +73,7 @@ export class EditPageComponent implements OnInit, OnDestroy {
         this.form.reset()
         this.router.navigate(['/admin', 'dashboard'])
         this.isSubmitted = false
+        this.alert.warning('Пост был обновлен')
       })
   }
 

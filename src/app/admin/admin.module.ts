@@ -9,10 +9,11 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
 import { CreatePageComponent } from './create-page/create-page.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { LoadingComponent } from './shared/components/loading/loading.component';
+import { AlertComponent } from './shared/components/alert/alert.component';
 import { SharedModule } from '../shared/shared.module';
 import { AuthGuard } from './shared/services/auth.guard';
 import { SearchPipe } from './shared/pipes/search.pipe';
-import { AlertComponent } from './shared/components/alert/alert.component';
+import { AlertService } from './shared/services/alert.service';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,9 @@ import { AlertComponent } from './shared/components/alert/alert.component';
     ])
   ],
   exports: [RouterModule],
-  providers: [AuthGuard]
+  providers: [
+    AuthGuard,
+    AlertService
+  ]
 })
 export class AdminModule {}

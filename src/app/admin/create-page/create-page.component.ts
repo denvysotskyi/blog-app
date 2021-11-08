@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { IPost } from '../../shared/interfaces';
 import { PostService } from '../../shared/post.service';
+import { AlertService } from '../shared/services/alert.service';
 
 @Component({
   selector: 'app-create-page',
@@ -16,7 +17,8 @@ export class CreatePageComponent implements OnInit {
 
   constructor(
     private postService: PostService,
-    private router: Router
+    private router: Router,
+    private alert: AlertService
   ) {}
 
   ngOnInit(): void {
@@ -48,6 +50,7 @@ export class CreatePageComponent implements OnInit {
     this.postService.create(post)
       .subscribe(() => {
         this.form.reset()
+        this.alert.success('Пост был создан')
         this.router.navigate(['/admin', 'dashboard'])
       })
   }

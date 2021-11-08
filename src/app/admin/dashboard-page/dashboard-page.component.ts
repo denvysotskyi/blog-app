@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { PostService } from '../../shared/post.service';
 import { IPost } from '../../shared/interfaces';
 import {filter} from "rxjs/operators";
+import {AlertService} from "../shared/services/alert.service";
 
 @Component({
   selector: 'app-dashboard-page',
@@ -17,7 +18,10 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   deleteSubscription?: Subscription
   searchString = ''
 
-  constructor(private postService: PostService) {}
+  constructor(
+    private postService: PostService,
+    private alert: AlertService
+  ) {}
 
   ngOnInit(): void {
     this.postSubscription = this.postService.getAll()
@@ -30,6 +34,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
     this.deleteSubscription = this.postService.remove(id)
       .subscribe(() => {
         this.postArr = this.postArr.filter(post => post.id !== id)
+        this.alert.warning('Пост был удален')
       })
   }
 

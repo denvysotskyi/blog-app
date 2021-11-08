@@ -1,6 +1,6 @@
 ### Description of application
 
-This application is a blog made with Angular
+This application - blog made with Angular
 
 ### Stay in touch
 
