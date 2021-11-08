@@ -10,7 +10,7 @@ import { AlertService } from '../../services/alert.service';
 })
 export class AlertComponent implements OnInit, OnDestroy {
 
-  @Input() delay = 5000
+  @Input() delay = 3000
 
   public text = ''
   public type = ''
