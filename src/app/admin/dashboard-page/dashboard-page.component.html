@@ -43,14 +43,16 @@
         {{post.date | date: 'medium': undefined: 'ua'}}
       </td>
       <td>
-        <button class="btn btn-link indent"
+        <button class="btn"
                 [routerLink]="['/admin', 'post', post.id, 'edit']"
         >
           Редактировать
         </button>
-        <a (click)="onRemove(post.id)">
+        <button class="btn btn-danger"
+           (click)="onRemove(post.id)"
+        >
           Удалить
-        </a>
+        </button>
       </td>
     </tr>
     </tbody>

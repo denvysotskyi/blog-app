@@ -1,3 +1,18 @@
-.indent {
-  margin-right: 10px;
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 1rem;
+  text-align: left;
+}
+
+table th {
+  background: var(--light-color);
+}
+
+button {
+  margin-right: 15px;
 }
