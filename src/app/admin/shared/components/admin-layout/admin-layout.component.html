@@ -7,17 +7,20 @@
     </a>
   </h1>
 
-  <button class="btn"
+  <button *ngIf="!auth.isAuthenticated()"
+          class="btn"
           type="button"
           [routerLink]="['/']"
   >
-    Вернутся на главную
+    Вернутся назад
   </button>
 
-  <ul *ngIf="auth.isAuthenticated()">
+  <ul class="nav-menu"
+      *ngIf="auth.isAuthenticated()"
+  >
     <li routerLinkActive="active">
       <a [routerLink]="['/admin', 'dashboard']">
-        Главная
+        Посты
       </a>
     </li>
     <li routerLinkActive="active">

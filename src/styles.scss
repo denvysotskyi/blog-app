@@ -9,6 +9,7 @@
   --success-color: #28a745;
   --dark-color: #333333;
   --light-color: #f4f4f4;
+  --gray-color: #dcdcdc;
 }
 
 * {
@@ -70,3 +71,54 @@ a {
   }
 }
 
+.form-control {
+  display: block;
+  color: var(--dark-color);
+  margin-bottom: .8rem;
+  &.invalid {
+    color: var(--danger-color);
+    input {
+      border-color: var(--danger-color);
+    }
+  }
+  .validation {
+    color: var(--danger-color);
+  }
+}
+
+.alert {
+  color: var(--danger-color);
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 14px;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid var(--gray-color);
+}
+
+input[type='submit'],
+button {
+  font: inherit;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  width: 250px;
+  li.active a {
+    color: var(--dark-color);
+    font-weight: bold;
+    cursor: default;
+  }
+}

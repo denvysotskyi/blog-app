@@ -1,5 +1,21 @@
 form {
-  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  min-height: 300px;
   margin: 0 auto;
   margin-top: 1.5rem;
+  border: 1px solid var(--gray-color);
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+.btn {
+  margin-top: 10px;
 }

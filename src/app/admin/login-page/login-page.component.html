@@ -1,25 +1,25 @@
-<form class="card"
+<form class="form"
       [formGroup]="form"
       (ngSubmit)="onSubmit()"
 >
   <h2>
-    Войти в панель администратора
+    Войти в админ панель
   </h2>
 
-  <div class="alert alert-danger"
+  <div class="alert"
        *ngIf="auth.error$ | async as error"
   >
-    <h4>
+    <p>
       {{error}}
-    </h4>
+    </p>
   </div>
 
-  <div class="alert alert-info"
+  <div class="alert"
        *ngIf="message"
   >
-    <h4>
+    <p>
       {{message}}
-    </h4>
+    </p>
   </div>
 
   <div class="form-control"
@@ -69,7 +69,7 @@
     </div>
   </div>
 
-  <button class="btn btn-primary"
+  <button class="btn btn-success"
           type="submit"
           [disabled]="form.invalid || isSubmitted"
   >
