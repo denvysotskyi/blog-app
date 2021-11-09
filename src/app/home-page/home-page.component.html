@@ -1,4 +1,4 @@
-<div class="posts"
+<div class="posts-wrap"
      *ngIf="postArr$ | async as postArr; else loading"
 >
   <app-post *ngFor="let post of postArr"

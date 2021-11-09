@@ -1,8 +1,18 @@
-<nav class="navbar main">
+<div class="navbar">
   <h1>
-    Blog App
+    <a [routerLink]="['/']">
+      Blog
+    </a>
+
   </h1>
-</nav>
+
+  <button class="btn"
+          type="button"
+          [routerLink]="['/admin', 'login']"
+  >
+    Войти в админ панель
+  </button>
+  </div>
 
 <div class="container">
   <router-outlet></router-outlet>
