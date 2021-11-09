@@ -1,18 +1,16 @@
-<div class="navbar">
+<nav class="navbar">
   <h1>
     <a [routerLink]="['/']">
       Blog
     </a>
-
   </h1>
-
   <button class="btn"
           type="button"
           [routerLink]="['/admin', 'login']"
   >
     Войти в админ панель
   </button>
-  </div>
+</nav>
 
 <div class="container">
   <router-outlet></router-outlet>

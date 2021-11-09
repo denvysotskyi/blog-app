@@ -4,7 +4,7 @@
 @import '~quill/dist/quill.snow.css';
 
 :root {
-  --danger-color: #dc3545;
+  --danger-color: #ff4500;
   --warning-color: #ffff00;
   --success-color: #28a745;
   --dark-color: #333333;
@@ -18,7 +18,7 @@
 }
 
 .navbar {
-  background: var(--light-color);
+  background: var(--danger-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,10 +37,10 @@
   color: var(--light-color);
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
-  border: none;
-  cursor: pointer;
   transition: opacity 0.2s ease-in;
   outline: none;
+  border: none;
+  cursor: pointer;
   &:hover {
     opacity: 0.8;
   }
@@ -62,7 +62,8 @@
 }
 
 a {
-  color: var(--dark-color);
+  font-weight: 100;
+  color: var(--light-color);
   text-decoration: none;
   &:hover {
     cursor: pointer;

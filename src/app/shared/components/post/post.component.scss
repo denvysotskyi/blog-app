@@ -1,3 +1,7 @@
+.post-wrap {
+  background: var(--light-color);
+}
+
 .post {
   min-height: 140px;
   border: 1px solid var(--light-color);
@@ -15,8 +19,8 @@
   width: 300px;
   display: grid;
   grid-template-areas:
-      'date btn'
-      'name btn';
+    'date btn'
+    'name btn';
 }
 
 .date {
@@ -26,6 +30,7 @@
 
 .name {
   grid-area: name;
+  font-weight: 600;
 }
 
 .btn {
