@@ -8,7 +8,6 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { CreatePageComponent } from './create-page/create-page.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
-import { LoadingComponent } from './shared/components/loading/loading.component';
 import { AlertComponent } from './shared/components/alert/alert.component';
 import { SharedModule } from '../shared/shared.module';
 import { AuthGuard } from './shared/services/auth.guard';
@@ -22,7 +21,6 @@ import { AlertService } from './shared/services/alert.service';
     DashboardPageComponent,
     CreatePageComponent,
     EditPageComponent,
-    LoadingComponent,
     SearchPipe,
     AlertComponent
   ],

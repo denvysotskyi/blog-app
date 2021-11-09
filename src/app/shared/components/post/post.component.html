@@ -1,22 +1,22 @@
 <div class="card">
   <div class="card-header">
     <h2>
-      Заголовок поста
+      {{post.title}}
     </h2>
 
     <small>
-      06.11.2021
+      {{post.date | date: 'mediumDate': undefined: 'ua'}}
     </small>
   </div>
 
   <div>
     <small>
-      Den
+      {{post.author}}
     </small>
   </div>
 
   <button class="btn btn-dark"
-          [routerLink]="['/post', 12213]"
+          [routerLink]="['/post', post.id]"
   >
     Открыть
   </button>
