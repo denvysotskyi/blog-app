@@ -1,0 +1,16 @@
+.error-wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 70px;
+  color: var(--danger-color);
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+  h4 {
+    margin-bottom: 15px;
+  }
+}
+
+

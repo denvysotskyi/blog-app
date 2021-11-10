@@ -2,7 +2,6 @@
   <form [formGroup]="form"
         (ngSubmit)="onSubmit()"
   >
-
     <div class="form-control"
          [ngClass]="{ invalid: form.get('title')!.touched && form.get('title')!.invalid }"
     >
@@ -42,7 +41,6 @@
     >
       Вернуться назад
     </button>
-
   </form>
 </div>
 

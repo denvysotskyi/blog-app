@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AuthInterceptor } from './shared/auth.interceptor';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 registerLocaleData(uaLocale, 'ua')
 
@@ -29,7 +30,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
     MainLayoutComponent,
     HomePageComponent,
     PostPageComponent,
-    PostComponent
+    PostComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

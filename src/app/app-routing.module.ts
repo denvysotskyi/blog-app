@@ -4,6 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PostPageComponent } from './post-page/post-page.component';
+import {ErrorPageComponent} from "./error-page/error-page.component";
 
 const routes: Routes = [
   {
@@ -26,9 +27,17 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'error',
+    component: ErrorPageComponent
+  },
+  {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module')
       .then(m => m.AdminModule)
+  },
+  {
+    path: '**',
+    redirectTo: '/error'
   }
 ]
 
