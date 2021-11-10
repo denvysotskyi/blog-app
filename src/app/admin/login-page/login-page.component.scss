@@ -11,7 +11,7 @@ form {
 }
 @media screen and (max-width: 425px) {
   form {
-    max-width: 220px;
+    max-width: 230px;
     min-height: 260px;
     label {
       font-size: 14px;
@@ -30,11 +30,16 @@ form {
         font-size: 16px;
       }
     }
+    .validation {
+      small {
+        font-size: 11px;
+      }
+    }
   }
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 27px;
   font-weight: 500;
   margin-bottom: 10px;
 }

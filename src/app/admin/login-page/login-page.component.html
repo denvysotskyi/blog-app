@@ -60,11 +60,17 @@
          *ngIf="form.get('password')!.touched && form.get('password')!.invalid"
     >
       <small *ngIf="form.get('password')!.errors!.required">
-        Введите значение для поля пароль
+        <p>
+          Введите значение для поля пароль
+        </p>
       </small>
       <small *ngIf="form.get('password')!.errors!.minlength">
-        Минимальная длина пароля {{form.get('password')!.errors!.minlength.requiredLength}} символов.
-        Сейчас он {{form.get('password')!.errors!.minlength.actualLength}} символа.
+        <p>
+          Минимальная длина пароля {{form.get('password')!.errors!.minlength.requiredLength}} символов.
+        </p>
+        <p>
+          Сейчас он {{form.get('password')!.errors!.minlength.actualLength}} символа.
+        </p>
       </small>
     </div>
   </div>
