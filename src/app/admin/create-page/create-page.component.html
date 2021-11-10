@@ -1,9 +1,11 @@
 <form [formGroup]="form"
       (ngSubmit)="onSubmit()"
 >
-  <h1>
-    Создание нового поста
-  </h1>
+  <div class="title">
+    <h1>
+      Создание нового поста
+    </h1>
+  </div>
 
   <div class="form-control"
        [ngClass]="{ invalid: form.get('title')!.touched && form.get('title')!.invalid }"
@@ -29,7 +31,9 @@
     <label>
       Контент поста:
     </label>
-    <quill-editor formControlName="text"></quill-editor>
+    <div class="quill">
+      <quill-editor formControlName="text"></quill-editor>
+    </div>
   </div>
 
   <div class="form-control"
@@ -52,18 +56,19 @@
     </div>
   </div>
 
-  <button class="btn btn-success"
-          type="submit"
-          [disabled]="form.invalid"
-  >
-    Создать пост
-  </button>
+  <div class="btn-wrap">
+    <button class="btn btn-success"
+            type="submit"
+            [disabled]="form.invalid"
+    >
+      Создать пост
+    </button>
 
-  <button class="btn btn-dark"
-          type="reset"
-          [routerLink]="['/admin', 'dashboard']"
-  >
-    Вернуться назад
-  </button>
-
+    <button class="btn btn-dark"
+            type="reset"
+            [routerLink]="['/admin', 'dashboard']"
+    >
+      Вернуться назад
+    </button>
+  </div>
 </form>

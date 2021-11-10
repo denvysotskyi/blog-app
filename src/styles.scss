@@ -125,3 +125,30 @@ ul {
     cursor: default;
   }
 }
+
+@media screen and (max-width: 425px) {
+  form {
+    label {
+      font-size: 14px;
+      margin-left: 15px;
+    }
+    input, .quill {
+      max-width: 90%;
+      margin: 0 auto;
+      font-size: 17px;
+    }
+    .form-control {
+      font-size: 14px;
+    }
+    .alert {
+      p {
+        font-size: 16px;
+      }
+    }
+    .validation {
+      small {
+        font-size: 11px;
+      }
+    }
+  }
+}
