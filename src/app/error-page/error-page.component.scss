@@ -1,16 +1,21 @@
 .error-wrap {
   position: absolute;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   margin-top: 70px;
   color: var(--danger-color);
   text-align: center;
-  h1 {
-    margin-bottom: 10px;
+  .error-title {
+    margin: 0 auto;
+    margin-bottom: 6px;
   }
   h4 {
     margin-bottom: 15px;
   }
 }
 
-
+h1 {
+  margin-left: 1.5rem;
+  font-weight: 300;
+}
