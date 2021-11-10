@@ -6,3 +6,23 @@ h1 {
 button {
   margin-right: 1.5rem;
 }
+
+@media screen and (max-width: 425px) {
+  .back {
+    max-width: 100px;
+    max-height: 42px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  li:first-child {
+    margin-left: 5px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .link {
+    font-size: 14px;
+  }
+}

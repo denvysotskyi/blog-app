@@ -8,7 +8,7 @@
   </h1>
 
   <button *ngIf="!auth.isAuthenticated()"
-          class="btn"
+          class="btn back"
           [routerLink]="['/']"
   >
     Вернутся назад
@@ -18,17 +18,22 @@
       *ngIf="auth.isAuthenticated()"
   >
     <li routerLinkActive="active">
-      <a [routerLink]="['/admin', 'dashboard']">
+      <a class="link"
+         [routerLink]="['/admin', 'dashboard']"
+      >
         Посты
       </a>
     </li>
     <li routerLinkActive="active">
-      <a [routerLink]="['/admin', 'create']">
+      <a class="link"
+        [routerLink]="['/admin', 'create']"
+      >
         Создать
       </a>
     </li>
     <li>
-      <a href="#"
+      <a class="link"
+         href="#"
          (click)="onLogout($event)"
       >
         Выйти
