@@ -9,9 +9,23 @@
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 425px) {
+  .post {
+    max-width: 230px;
+    min-height: 160px;
+  }
+}
 
 .title {
   margin: 20px 0 20px 30px;
+}
+@media screen and (max-width: 425px) {
+  .title {
+    font-size: 12px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 .info {
@@ -21,6 +35,15 @@
   grid-template-areas:
     'date btn'
     'name btn';
+}
+@media screen and (max-width: 425px) {
+  .info {
+    margin-left: 73px;
+    grid-template-areas:
+    'date .'
+    'name .'
+    'btn .';
+  }
 }
 
 .date {
@@ -32,8 +55,20 @@
   grid-area: name;
   font-weight: 600;
 }
+@media screen and (max-width: 425px) {
+  .name {
+    margin-bottom: 5px;
+  }
+}
 
-.btn {
+.open {
   grid-area: btn;
   margin-right: 30px;
+}
+@media screen and (max-width: 425px) {
+  .open {
+    margin-top: 10px;
+    max-width: 80px;
+    font-size: 13px;
+  }
 }

@@ -34,6 +34,9 @@
 }
 
 .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: var(--dark-color);
   color: var(--light-color);
   padding: 0.4rem 1.3rem;
