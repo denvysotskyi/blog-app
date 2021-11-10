@@ -1,30 +1,38 @@
 <div *ngIf="post$ | async as post; else loading">
-  <div>
-    <div>
+  <div class="post-wrap">
+    <div class="post">
       <h1>
         {{post.title}}
       </h1>
 
-      <button class="btn"
-              routerLink="/"
-      >
-        На главную
-      </button>
+      <div class="info">
+        <small class="date">
+          <p>
+            {{post.date | date: 'mediumDate': undefined: 'ua'}}
+          </p>
+        </small>
+        <strong class="name">
+          <p>
+            {{post.author}}
+          </p>
+        </strong>
+      </div>
 
-    </div>
-    <div>
-      <strong>
-        {{post.author}}
-      </strong>
-      <small>
-        {{post.date | date: 'mediumDate': undefined: 'ua'}}
-      </small>
-    </div>
-    <div>
-      <quill-view-html [content]="post.text"></quill-view-html>
+      <div>
+        <quill-view-html [content]="post.text"></quill-view-html>
+      </div>
+
+      <div class="main">
+        <button class="btn"
+                routerLink="/"
+        >
+          На главную
+        </button>
+      </div>
     </div>
   </div>
 </div>
+
 
 <ng-template #loading>
   <app-loading></app-loading>
