@@ -2,6 +2,12 @@
   <form [formGroup]="form"
         (ngSubmit)="onSubmit()"
   >
+    <div class="title">
+      <h1>
+        Редактирование поста
+      </h1>
+    </div>
+
     <div class="form-control"
          [ngClass]="{ invalid: form.get('title')!.touched && form.get('title')!.invalid }"
     >
@@ -23,24 +29,26 @@
     </div>
 
     <div class="form-control">
-      <quill-editor formControlName="text">
-
-      </quill-editor>
+      <div class="quill">
+        <quill-editor formControlName="text"></quill-editor>
+      </div>
     </div>
 
-    <button class="btn btn-success"
-            type="submit"
-            [disabled]="form.invalid || isSubmitted"
-    >
-      Обновить
-    </button>
+    <div class="btn-wrap">
+      <button class="btn btn-success"
+              type="submit"
+              [disabled]="form.invalid || isSubmitted"
+      >
+        Обновить
+      </button>
 
-    <button class="btn btn-dark"
-            type="reset"
-            [routerLink]="['/admin', 'dashboard']"
-    >
-      Вернуться назад
-    </button>
+      <button class="btn btn-dark"
+              type="reset"
+              [routerLink]="['/admin', 'dashboard']"
+      >
+        Вернуться назад
+      </button>
+    </div>
   </form>
 </div>
 

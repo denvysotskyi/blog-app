@@ -65,6 +65,39 @@
   color: #fff;
 }
 
+@media screen and (max-width: 425px) {
+  .title {
+    margin-bottom: 15px;
+    text-align: center;
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 auto;
+    }
+  }
+}
+
+.btn-wrap {
+  display: flex;
+}
+@media screen and (max-width: 425px) {
+  .btn-wrap {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    .btn {
+      max-width: 100px;
+      font-size: 12px;
+    }
+    .btn-success {
+      margin: 0 15px;
+    }
+    .btn-dark {
+      margin-right: 15px;
+    }
+  }
+}
+
 a {
   font-weight: 100;
   color: var(--light-color);

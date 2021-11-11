@@ -16,7 +16,7 @@ table th {
 button {
   margin-right: 15px;
 }
-.btn-wrap {
+.button-wrap {
   display: flex;
 }
 
@@ -33,9 +33,9 @@ button {
     max-width: 10px;
   }
   .name {
-    max-width: 50px;
+    max-width: 60px;
   }
-  .btn-wrap {
+  .button-wrap {
     flex-direction: column;
     max-width: 140px;
     .btn {
