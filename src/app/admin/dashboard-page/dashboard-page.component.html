@@ -10,10 +10,10 @@
   <table>
     <thead>
     <tr>
-      <th>
+      <th class="number">
         id
       </th>
-      <th>
+      <th class="name">
         Автор
       </th>
       <th>
@@ -30,10 +30,10 @@
 
     <tbody>
     <tr *ngFor="let post of postArr | searchPost: searchString; let idx = index">
-      <td>
+      <td class="number">
         {{idx + 1}}
       </td>
-      <td>
+      <td class="name">
         {{post.author}}
       </td>
       <td>
@@ -42,7 +42,7 @@
       <td>
         {{post.date | date: 'medium': undefined: 'ua'}}
       </td>
-      <td>
+      <td class="btn-wrap">
         <button class="btn"
                 [routerLink]="['/admin', 'post', post.id, 'edit']"
         >

@@ -16,3 +16,31 @@ table th {
 button {
   margin-right: 15px;
 }
+.btn-wrap {
+  display: flex;
+}
+
+@media screen and (max-width: 425px) {
+  th {
+    max-width: 70px;
+    font-size: 12px;
+  }
+  td {
+    max-width: 70px;
+    font-size: 11px;
+  }
+  .number {
+    max-width: 10px;
+  }
+  .name {
+    max-width: 50px;
+  }
+  .btn-wrap {
+    flex-direction: column;
+    max-width: 140px;
+    .btn {
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
+  }
+}
