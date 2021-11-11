@@ -22,18 +22,18 @@ button {
 
 @media screen and (max-width: 425px) {
   th {
-    max-width: 70px;
+    max-width: 75px;
     font-size: 12px;
   }
   td {
-    max-width: 70px;
+    max-width: 75px;
     font-size: 11px;
   }
   .number {
-    max-width: 10px;
+    max-width: 5px;
   }
   .name {
-    max-width: 60px;
+    max-width: 55px;
   }
   .button-wrap {
     flex-direction: column;
