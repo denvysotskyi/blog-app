@@ -1,10 +1,16 @@
-<diV *ngIf="postArr.length; else loading">
+<div *ngIf="postArr.length; else loading">
   <form class="form-control">
-    <input type="text"
-           name="searchString"
-           placeholder="Найти пост"
-           [(ngModel)]="searchString"
-    />
+    <div class="search-panel">
+      <input class="search"
+             type="text"
+             name="searchString"
+             placeholder="Найти пост"
+             [(ngModel)]="searchString"
+      />
+      <img src="./assets/search.png"
+           alt="search"
+      />
+    </div>
   </form>
 
   <table>
@@ -57,7 +63,7 @@
     </tr>
     </tbody>
   </table>
-</diV>
+</div>
 
 <ng-template #loading>
   <app-loading></app-loading>
