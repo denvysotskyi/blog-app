@@ -1,5 +1,7 @@
-.posts-wrap {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+@media screen and (max-width: 425px) {
+  .posts-wrap {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 }

@@ -18,15 +18,17 @@
 
 .title {
   margin: 20px 0 20px 30px;
-  max-width: 190px;
   word-wrap: break-word;
 }
 @media screen and (max-width: 425px) {
   .title {
-    font-size: 12px;
+    h2 {
+      max-width: 205px;
+      font-size: 16px;
+    }
     margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 }
 
@@ -35,16 +37,13 @@
   width: 300px;
   display: grid;
   grid-template-areas:
-    'date btn'
-    'name btn';
+    'date .'
+    'name .'
+    'btn .';
 }
 @media screen and (max-width: 425px) {
   .info {
     margin-left: 73px;
-    grid-template-areas:
-    'date .'
-    'name .'
-    'btn .';
   }
 }
 
@@ -56,6 +55,7 @@
 .name {
   grid-area: name;
   font-weight: 600;
+  margin-bottom: 15px;
 }
 @media screen and (max-width: 425px) {
   .name {

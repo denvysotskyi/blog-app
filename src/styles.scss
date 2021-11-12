@@ -128,11 +128,21 @@ input[type='password'],
 input[type='date'],
 select,
 textarea {
+  font-size: 20px;
   display: block;
   width: 100%;
-  padding: 0.4rem;
-  font-size: 1.2rem;
+  padding: 5px;
   border: 1px solid var(--gray-color);
+}
+@media screen and (max-width: 425px) {
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='date'],
+  select,
+  textarea {
+    font-size: 15px;
+  }
 }
 
 input[type='submit'],
