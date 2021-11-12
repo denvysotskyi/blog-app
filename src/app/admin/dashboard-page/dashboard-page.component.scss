@@ -27,6 +27,10 @@ table {
   border-collapse: collapse;
 }
 
+td {
+  word-wrap: break-word;
+}
+
 table th,
 table td {
   padding: 1rem;

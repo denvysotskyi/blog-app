@@ -18,6 +18,8 @@
 
 .title {
   margin: 20px 0 20px 30px;
+  max-width: 190px;
+  word-wrap: break-word;
 }
 @media screen and (max-width: 425px) {
   .title {
@@ -71,4 +73,8 @@
     max-width: 80px;
     font-size: 13px;
   }
+}
+
+button {
+  margin-bottom: 20px;
 }
