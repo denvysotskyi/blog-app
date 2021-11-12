@@ -26,8 +26,7 @@
 h1 {
   margin-bottom: 15px;
   margin-left: 15px;
-  text-align: center;
-  width: 280px;
+  max-width: 400px;
 }
 @media screen and (max-width: 425px) {
   h1 {
