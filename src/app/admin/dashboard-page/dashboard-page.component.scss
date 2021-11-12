@@ -50,18 +50,18 @@ button {
 
 @media screen and (max-width: 425px) {
   th {
-    max-width: 75px;
+    max-width: 70px;
     font-size: 12px;
   }
   td {
-    max-width: 75px;
+    max-width: 70px;
     font-size: 11px;
   }
   .number {
     max-width: 5px;
   }
   .name {
-    max-width: 55px;
+    max-width: 65px;
   }
   .button-wrap {
     flex-direction: column;
