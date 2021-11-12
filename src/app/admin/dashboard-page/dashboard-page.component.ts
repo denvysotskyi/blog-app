@@ -33,7 +33,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
     this.deleteSubscription = this.postService.remove(id)
       .subscribe(() => {
         this.postArr = this.postArr.filter(post => post.id !== id)
-        this.alert.warning('Пост был удален')
+        this.alert.danger('Пост был удален')
       })
   }
 
