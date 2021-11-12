@@ -4,7 +4,7 @@ form {
   justify-content: center;
   align-items: center;
   max-width: 500px;
-  min-height: 300px;
+  min-height: 310px;
   margin: 0 auto;
   margin-top: 1.5rem;
   border: 1px solid var(--gray-color);
@@ -12,7 +12,7 @@ form {
 @media screen and (max-width: 425px) {
   form {
     max-width: 246px;
-    min-height: 260px;
+    min-height: 290px;
   }
 }
 

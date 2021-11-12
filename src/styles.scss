@@ -50,19 +50,25 @@
   }
   &:disabled {
     background: var(--light-color);
-    color: #111;
+    color: var(--dark-color);
     cursor: not-allowed;
   }
 }
 
 .btn-danger {
   background: var(--danger-color);
-  color: #fff;
+  color: var(--light-color);
 }
 
 .btn-success {
   background: var(--success-color);
-  color: #fff;
+  color: var(--light-color);
+}
+
+.alert {
+  text-align: center;
+  color: var(--danger-color);
+  margin-bottom: 5px;
 }
 
 @media screen and (max-width: 425px) {
@@ -162,7 +168,8 @@ ul {
     }
     .alert {
       p {
-        font-size: 16px;
+        font-size: 14px;
+        width: 180px;
       }
     }
     .validation {
