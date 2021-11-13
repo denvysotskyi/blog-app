@@ -68,6 +68,16 @@ button {
   display: flex;
 }
 
+@media screen and (max-width: 768px) {
+  .button-wrap {
+    flex-direction: column;
+    max-width: 140px;
+    .btn {
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+  }
+}
 @media screen and (max-width: 425px) {
   th {
     max-width: 70px;
@@ -81,10 +91,7 @@ button {
     max-width: 5px;
   }
   .button-wrap {
-    flex-direction: column;
-    max-width: 140px;
     .btn {
-      margin-bottom: 5px;
       font-size: 11px;
     }
   }

@@ -16,15 +16,23 @@
   }
 }
 
-h1 {
+h2 {
   margin-bottom: 15px;
   margin-left: 15px;
+}
+@media screen and (max-width: 768px) {
+  .post-title {
+    max-width: 640px;
+    h2 {
+      font-size: 20px;
+    }
+  }
 }
 @media screen and (max-width: 425px) {
  .post-title {
    max-width: 330px;
-   h1 {
-     font-size: 20px;
+   h2 {
+     font-size: 16px;
    }
  }
 }
