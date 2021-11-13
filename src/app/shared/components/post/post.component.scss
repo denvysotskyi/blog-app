@@ -1,24 +1,38 @@
 .post-wrap {
   background: var(--light-color);
 }
-
-.post {
-  min-height: 140px;
-  border: 1px solid var(--light-color);
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
+@media screen and (max-width: 768px) {
+  .post-wrap {
+    max-width: 500px;
+    margin: 0 auto;
+  }
 }
 @media screen and (max-width: 425px) {
-  .post {
+  .post-wrap {
     max-width: 230px;
     min-height: 160px;
   }
 }
 
+.post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  min-height: 140px;
+  border: 1px solid var(--light-color);
+}
+
 .title {
   margin: 20px 0 20px 30px;
   word-wrap: break-word;
+}
+@media screen and (max-width: 768px) {
+  .title {
+    h2 {
+      max-width: 440px;
+      font-size: 20px;
+    }
+  }
 }
 @media screen and (max-width: 425px) {
   .title {
