@@ -22,8 +22,8 @@ h1 {
 }
 @media screen and (max-width: 425px) {
  .post-title {
+   max-width: 330px;
    h1 {
-     max-width: 350px;
      font-size: 20px;
    }
  }
