@@ -21,14 +21,12 @@ h1 {
   margin-left: 15px;
 }
 @media screen and (max-width: 425px) {
-  .main-wrap {
-    .post {
-      h1 {
-        max-width: 390px;
-        font-size: 20px;
-      }
-    }
-  }
+ .post-title {
+   h1 {
+     max-width: 350px;
+     font-size: 20px;
+   }
+ }
 }
 
 .btn {

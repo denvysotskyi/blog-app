@@ -1,9 +1,11 @@
 <div class="main-wrap">
   <div *ngIf="post$ | async as post; else loading">
     <div class="post">
-      <h1>
-        {{post.title}}
-      </h1>
+      <div class="post-title">
+        <h1>
+          {{post.title}}
+        </h1>
+      </div>
 
       <div class="info">
         <small class="date">
