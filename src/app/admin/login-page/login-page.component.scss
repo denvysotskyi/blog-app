@@ -3,15 +3,15 @@ form {
   flex-direction: column;
   align-items: center;
   max-width: 350px;
-  min-height: 260px;
+  min-height: 248px;
   margin: 0 auto;
   margin-top: 10px;
   border: 1px solid var(--gray-color);
 }
 @media screen and (max-width: 425px) {
   form {
-    max-width: 246px;
-    min-height: 239px;
+    max-width: 210px;
+    min-height: 224px;
   }
 }
 
@@ -23,11 +23,17 @@ h2 {
 }
 @media screen and (max-width: 425px) {
   h2 {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 400;
+    margin: 10px 0 8px 0;
   }
 }
 
 .btn {
   margin-top: 10px;
+}
+@media screen and (max-width: 425px) {
+  btn {
+    margin-top: 5px;
+  }
 }
