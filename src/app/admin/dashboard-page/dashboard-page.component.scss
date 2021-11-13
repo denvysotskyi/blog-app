@@ -69,6 +69,12 @@ button {
 }
 
 @media screen and (max-width: 768px) {
+  th {
+    font-size: 15px;
+  }
+  td {
+    font-size: 14px;
+  }
   .button-wrap {
     flex-direction: column;
     max-width: 140px;
