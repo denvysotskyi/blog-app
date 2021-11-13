@@ -5,7 +5,7 @@ form {
   max-width: 350px;
   min-height: 260px;
   margin: 0 auto;
-  margin-top: 15px;
+  margin-top: 10px;
   border: 1px solid var(--gray-color);
 }
 @media screen and (max-width: 425px) {
@@ -18,8 +18,8 @@ form {
 h2 {
   font-size: 24px;
   font-weight: 500;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin: 10px 0;
+
 }
 @media screen and (max-width: 425px) {
   h2 {

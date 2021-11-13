@@ -1,6 +1,11 @@
 h1 {
   margin-bottom: 15px;
 }
+@media screen and (max-width: 425px) {
+  h1 {
+    max-width: 395px;
+  }
+}
 
 button {
   margin-right: 15px;
