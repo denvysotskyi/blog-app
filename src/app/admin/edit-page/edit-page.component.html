@@ -1,4 +1,6 @@
-<div *ngIf="form; else loading">
+<div class="main-wrap"
+     *ngIf="form; else loading"
+>
   <form [formGroup]="form"
         (ngSubmit)="onSubmit()"
   >

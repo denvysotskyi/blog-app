@@ -33,20 +33,25 @@
   overflow: hidden;
 }
 
+.main-wrap {
+  max-width: 992px;
+  margin: 0 auto;
+}
+
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
   background: var(--dark-color);
   color: var(--light-color);
-  padding: 0.4rem 1.3rem;
-  font-size: 1rem;
-  transition: opacity 0.2s ease-in;
+  padding: 6px 20px;
+  font-size: 16px;
+  transition: opacity .2s ease-in;
   outline: none;
   border: none;
   cursor: pointer;
   &:hover {
-    opacity: 0.8;
+    opacity: .8;
   }
   &:disabled {
     background: var(--light-color);
@@ -71,6 +76,11 @@
   margin-bottom: 5px;
 }
 
+@media screen and (max-width: 768px) {
+  .title {
+    margin-left: 20px;
+  }
+}
 @media screen and (max-width: 425px) {
   .title {
     margin-bottom: 15px;
@@ -85,6 +95,11 @@
 
 .btn-wrap {
   display: flex;
+}
+@media screen and (max-width: 768px) {
+  .btn-wrap {
+    margin-left: 20px;
+  }
 }
 @media screen and (max-width: 425px) {
   .btn-wrap {
@@ -110,7 +125,7 @@ a {
 .form-control {
   display: block;
   color: var(--dark-color);
-  margin-bottom: .8rem;
+  margin-bottom: 12px;
   &.invalid {
     color: var(--danger-color);
     input {
@@ -162,11 +177,23 @@ ul {
   }
 }
 
+@media screen and (max-width: 768px) {
+  form {
+    label {
+      font-size: 15px;
+      margin-left: 20px;
+    }
+    input, .quill {
+      max-width: 95%;
+      margin: 0 auto;
+      font-size: 15px;
+    }
+  }
+}
 @media screen and (max-width: 425px) {
   form {
     label {
       font-size: 14px;
-      margin-left: 15px;
     }
     input, .quill {
       max-width: 90%;

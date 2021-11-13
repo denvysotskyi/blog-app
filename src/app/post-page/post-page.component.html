@@ -1,5 +1,5 @@
-<div *ngIf="post$ | async as post; else loading">
-  <div class="post-wrap">
+<div class="main-wrap">
+  <div *ngIf="post$ | async as post; else loading">
     <div class="post">
       <h1>
         {{post.title}}
@@ -32,7 +32,6 @@
     </div>
   </div>
 </div>
-
 
 <ng-template #loading>
   <app-loading></app-loading>

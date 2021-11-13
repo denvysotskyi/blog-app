@@ -1,11 +1,4 @@
-.post-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .post {
-  max-width: 1000px;
   .main {
     margin-top: 20px;
     position: absolute;
@@ -26,10 +19,10 @@
 h1 {
   margin-bottom: 15px;
   margin-left: 15px;
-  max-width: 400px;
 }
 @media screen and (max-width: 425px) {
   h1 {
+    max-width: 395px;
     font-size: 20px;
   }
 }

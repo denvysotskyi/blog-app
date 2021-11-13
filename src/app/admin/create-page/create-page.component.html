@@ -1,74 +1,77 @@
-<form [formGroup]="form"
-      (ngSubmit)="onSubmit()"
->
-  <div class="title">
-    <h1>
-      Создание нового поста
-    </h1>
-  </div>
-
-  <div class="form-control"
-       [ngClass]="{ invalid: form.get('title')!.touched && form.get('title')!.invalid }"
+<div class="main-wrap">
+  <form [formGroup]="form"
+        (ngSubmit)="onSubmit()"
   >
-    <label for="title">
-      Название поста:
-    </label>
-    <input id="title"
-           type="text"
-           placeholder="Введите название"
-           formControlName="title"
-    />
-    <div class="validation"
-         *ngIf="form.get('title')!.touched && form.get('title')!.invalid"
-    >
-      <small *ngIf="form.get('title')!.errors!.required">
-        Введите корректное название поста
-      </small>
+    <div class="title">
+      <h1>
+        Создание нового поста
+      </h1>
     </div>
-  </div>
 
-  <div class="form-control">
-    <label>
-      Контент поста:
-    </label>
-    <div class="quill">
-      <quill-editor formControlName="text"></quill-editor>
+    <div class="form-control"
+         [ngClass]="{ invalid: form.get('title')!.touched && form.get('title')!.invalid }"
+    >
+      <label for="title">
+        Название поста:
+      </label>
+      <input id="title"
+             type="text"
+             placeholder="Введите название"
+             formControlName="title"
+      />
+      <div class="validation"
+           *ngIf="form.get('title')!.touched && form.get('title')!.invalid"
+      >
+        <small *ngIf="form.get('title')!.errors!.required">
+          Введите корректное название поста
+        </small>
+      </div>
     </div>
-  </div>
 
-  <div class="form-control"
-       [ngClass]="{ invalid: form.get('author')!.touched && form.get('author')!.invalid }"
-  >
-    <label for="author">
-      Имя автора поста:
-    </label>
-    <input id="author"
-           type="text"
-           placeholder="Введите имя автора"
-           formControlName="author"
-    />
-    <div class="validation"
-         *ngIf="form.get('author')!.touched && form.get('author')!.invalid"
-    >
-      <small *ngIf="form.get('author')!.errors!.required">
-        Введите корректное имя автора поста
-      </small>
+    <div class="form-control">
+      <label>
+        Контент поста:
+      </label>
+      <div class="quill">
+        <quill-editor formControlName="text"></quill-editor>
+      </div>
     </div>
-  </div>
 
-  <div class="btn-wrap">
-    <button class="btn btn-success"
-            type="submit"
-            [disabled]="form.invalid"
+    <div class="form-control"
+         [ngClass]="{ invalid: form.get('author')!.touched && form.get('author')!.invalid }"
     >
-      Создать пост
-    </button>
+      <label for="author">
+        Имя автора поста:
+      </label>
+      <input id="author"
+             type="text"
+             placeholder="Введите имя автора"
+             formControlName="author"
+      />
+      <div class="validation"
+           *ngIf="form.get('author')!.touched && form.get('author')!.invalid"
+      >
+        <small *ngIf="form.get('author')!.errors!.required">
+          Введите корректное имя автора поста
+        </small>
+      </div>
+    </div>
 
-    <button class="btn btn-dark"
-            type="reset"
-            [routerLink]="['/admin', 'dashboard']"
-    >
-      Вернуться назад
-    </button>
-  </div>
-</form>
+    <div class="btn-wrap">
+      <button class="btn btn-success"
+              type="submit"
+              [disabled]="form.invalid"
+      >
+        Создать пост
+      </button>
+
+      <button class="btn btn-dark"
+              type="reset"
+              [routerLink]="['/admin', 'dashboard']"
+      >
+        Вернуться назад
+      </button>
+    </div>
+  </form>
+</div>
+
