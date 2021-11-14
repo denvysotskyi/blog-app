@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core'
+import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { Router } from '@angular/router'
 
-import { IPost } from '../../shared/interfaces';
-import { PostService } from '../../shared/post.service';
-import { AlertService } from '../shared/services/alert.service';
+import { IPost } from '../../shared/interfaces'
+import { PostService } from '../../shared/post.service'
+import { AlertService } from '../shared/services/alert.service'
 
 @Component({
   selector: 'app-create-page',

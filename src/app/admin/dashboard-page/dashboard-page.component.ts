@@ -1,9 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core'
+import { Subscription } from 'rxjs'
 
-import { IPost } from '../../shared/interfaces';
-import { PostService } from '../../shared/post.service';
-import { AlertService } from '../shared/services/alert.service';
+import { IPost } from '../../shared/interfaces'
+import { PostService } from '../../shared/post.service'
+import { AlertService } from '../shared/services/alert.service'
 
 @Component({
   selector: 'app-dashboard-page',

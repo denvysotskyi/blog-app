@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { QuillModule } from 'ngx-quill';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { HttpClientModule } from '@angular/common/http'
+import { QuillModule } from 'ngx-quill'
 
-import { LoadingComponent } from '../admin/shared/components/loading/loading.component';
+import { LoadingComponent } from '../admin/shared/components/loading/loading.component'
 
 @NgModule({
   declarations: [

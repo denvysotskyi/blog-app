@@ -1,4 +1,4 @@
-import { IEnvironment } from './interface';
+import { IEnvironment } from './interface'
 
 export const environment: IEnvironment = {
   production: true,

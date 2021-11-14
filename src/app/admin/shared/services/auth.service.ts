@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, Subject, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { Injectable } from '@angular/core'
+import { HttpClient, HttpErrorResponse } from '@angular/common/http'
+import { Observable, Subject, throwError } from 'rxjs'
+import { catchError, tap } from 'rxjs/operators'
 
-import { IFbAuthResponse, IUser } from '../../../shared/interfaces';
-import { environment } from '../../../../environments/environment';
+import { IFbAuthResponse, IUser } from '../../../shared/interfaces'
+import { environment } from '../../../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
