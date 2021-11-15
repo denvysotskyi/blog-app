@@ -9,10 +9,9 @@ import { IPost } from '../shared/interfaces'
 @Component({
   selector: 'app-post-page',
   templateUrl: './post-page.component.html',
-  styleUrls: ['./post-page.component.scss']
+  styleUrls: ['./post-page.component.scss'],
 })
 export class PostPageComponent implements OnInit {
-
   post$?: Observable<IPost>
 
   constructor(
@@ -21,12 +20,10 @@ export class PostPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.post$ = this.route.params
-      .pipe(
-        switchMap((params: Params) => {
-          return this.postService.getById(params['id'])
-        })
-      )
+    this.post$ = this.route.params.pipe(
+      switchMap((params: Params) => {
+        return this.postService.getById(params['id'])
+      })
+    )
   }
-
 }
