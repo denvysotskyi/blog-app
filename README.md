@@ -2,8 +2,8 @@
 
 This application - blog made with Angular.
 
-To obtain access rights to the admin panel, a password is required. 
-You can get it from the author of the project.
+To obtain access rights to the admin panel, you need a test mail address and password.
+You can find out this data by contacting the author of the project.
 
 ### Stay in touch
 
