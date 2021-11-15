@@ -1,27 +1,23 @@
-<div class="post-wrap">
-
-  <div class="post">
-
-    <div class="title">
+<div class='post-wrap'>
+  <div class='post'>
+    <div class='title'>
       <h2>
         {{post.title}}
       </h2>
     </div>
 
-    <div class="info">
-      <small class="date">
+    <div class='info'>
+      <small class='date'>
         {{post.date | date: 'mediumDate': undefined: 'ua'}}
       </small>
-      <small class="name">
+      <small class='name'>
       {{post.author}}
       </small>
-      <button class="btn btn-danger open"
+      <button class='btn btn-danger open'
               [routerLink]="['/post', post.id]"
       >
         Открыть
       </button>
     </div>
-
   </div>
-
 </div>

@@ -1,19 +1,19 @@
-<div class="main-wrap">
-  <div *ngIf="post$ | async as post; else loading">
-    <div class="post">
-      <div class="post-title">
+<div class='main-wrap'>
+  <div *ngIf='post$ | async as post; else loading'>
+    <div class='post'>
+      <div class='post-title'>
         <h2>
           {{post.title}}
         </h2>
       </div>
 
-      <div class="info">
-        <small class="date">
+      <div class='info'>
+        <small class='date'>
           <p>
             {{post.date | date: 'mediumDate': undefined: 'ua'}}
           </p>
         </small>
-        <strong class="name">
+        <strong class='name'>
           <p>
             {{post.author}}
           </p>
@@ -21,12 +21,12 @@
       </div>
 
       <div>
-        <quill-view-html [content]="post.text"></quill-view-html>
+        <quill-view-html [content]='post.text'></quill-view-html>
       </div>
 
-      <div class="main">
-        <button class="btn"
-                routerLink="/"
+      <div class='main'>
+        <button class='btn'
+                routerLink='/'
         >
           На главную
         </button>

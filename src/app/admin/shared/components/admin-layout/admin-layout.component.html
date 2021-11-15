@@ -1,40 +1,40 @@
 <app-alert></app-alert>
 
-<nav class="navbar">
+<nav class='navbar'>
   <h1>
     <a [routerLink]="['/']">
       Blog
     </a>
   </h1>
 
-  <button *ngIf="!auth.isAuthenticated()"
-          class="btn back"
+  <button *ngIf='!auth.isAuthenticated()'
+          class='btn back'
           [routerLink]="['/']"
   >
     Вернутся назад
   </button>
 
-  <ul class="nav-menu"
-      *ngIf="auth.isAuthenticated()"
+  <ul class='nav-menu'
+      *ngIf='auth.isAuthenticated()'
   >
-    <li routerLinkActive="active">
-      <a class="link"
+    <li routerLinkActive='active'>
+      <a class='link'
          [routerLink]="['/admin', 'dashboard']"
       >
         Посты
       </a>
     </li>
-    <li routerLinkActive="active">
-      <a class="link"
+    <li routerLinkActive='active'>
+      <a class='link'
         [routerLink]="['/admin', 'create']"
       >
         Создать
       </a>
     </li>
     <li>
-      <a class="link"
-         href="#"
-         (click)="onLogout($event)"
+      <a class='link'
+         href='#'
+         (click)='onLogout($event)'
       >
         Выйти
       </a>
@@ -42,6 +42,6 @@
   </ul>
 </nav>
 
-<div class="container">
+<div class='container'>
   <router-outlet></router-outlet>
 </div>

@@ -1,8 +1,8 @@
-<div class="main-wrap"
-     *ngIf="postArr$ | async as postArr; else loading"
+<div class='main-wrap'
+     *ngIf='postArr$ | async as postArr; else loading'
 >
-  <app-post *ngFor="let post of postArr"
-            [post]="post"
+  <app-post *ngFor='let post of postArr'
+            [post]='post'
   >
   </app-post>
 </div>

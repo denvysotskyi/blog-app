@@ -1,17 +1,17 @@
-<div class="main-wrap"
-     *ngIf="postArr.length; else loading"
+<div class='main-wrap'
+     *ngIf='postArr.length; else loading'
 >
-  <form class="form-control">
-    <div class="search-panel">
-      <input class="search"
-             type="text"
-             name="searchString"
-             placeholder="Найти пост"
-             [(ngModel)]="searchString"
+  <form class='form-control'>
+    <div class='search-panel'>
+      <input class='search'
+             type='text'
+             name='searchString'
+             placeholder='Найти пост'
+             [(ngModel)]='searchString'
       />
-      <div class="image-wrap">
-        <img src="./assets/search.png"
-             alt="search"
+      <div class='image-wrap'>
+        <img src='./assets/search.png'
+             alt='search'
         />
       </div>
     </div>
@@ -20,10 +20,10 @@
   <table>
     <thead>
     <tr>
-      <th class="number">
+      <th class='number'>
         id
       </th>
-      <th class="name">
+      <th class='name'>
         Автор
       </th>
       <th>
@@ -39,26 +39,26 @@
     </thead>
 
     <tbody>
-    <tr *ngFor="let post of postArr | searchPost: searchString; let idx = index">
-      <td class="number">
+    <tr *ngFor='let post of postArr | searchPost: searchString; let idx = index'>
+      <td class='number'>
         {{idx + 1}}
       </td>
-      <td class="name">
+      <td class='name'>
         {{post.author}}
       </td>
-      <td class="title word-wrap">
+      <td class='title word-wrap'>
         {{post.title}}
       </td>
       <td>
         {{post.date | date: 'medium': undefined: 'ua'}}
       </td>
-      <td class="button-wrap">
-        <button class="btn"
+      <td class='button-wrap'>
+        <button class='btn'
                 [routerLink]="['/admin', 'post', post.id, 'edit']"
         >
           Редактировать
         </button>
-        <button class="btn btn-danger"
+        <button class='btn btn-danger'
                 (click)="onRemove(post.id)"
         >
           Удалить
