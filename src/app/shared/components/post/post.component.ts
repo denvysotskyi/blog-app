@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core'
 
-import { IPost } from '../../interfaces'
+import { PostInterface } from '../../interfaces/app.interfaces'
 
 @Component({
   selector: 'app-post',
@@ -8,8 +8,5 @@ import { IPost } from '../../interfaces'
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
-
-  @Input() post!: IPost
-
+  @Input() post: PostInterface
 }
-

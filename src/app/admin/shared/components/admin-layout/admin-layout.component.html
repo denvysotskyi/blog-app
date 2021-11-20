@@ -6,14 +6,12 @@
       Blog
     </a>
   </h1>
-
-  <button *ngIf='!auth.isAuthenticated()'
-          class='btn back'
+  <button class='btn back'
+          *ngIf='!auth.isAuthenticated()'
           [routerLink]="['/']"
   >
     Вернутся назад
   </button>
-
   <ul class='nav-menu'
       *ngIf='auth.isAuthenticated()'
   >

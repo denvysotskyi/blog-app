@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { ActivatedRoute, Params, Router } from '@angular/router'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
-import { switchMap } from 'rxjs/operators'
 import { Subscription } from 'rxjs'
+import { switchMap } from 'rxjs/operators'
 
 import { PostService } from '../../shared/post.service'
 import { AlertService } from '../shared/services/alert.service'
-import { IPost } from '../../shared/interfaces'
+import { PostInterface } from '../../shared/interfaces/app.interfaces'
 
 @Component({
   selector: 'app-edit-page',
@@ -14,12 +14,11 @@ import { IPost } from '../../shared/interfaces'
   styleUrls: ['./edit-page.component.scss']
 })
 export class EditPageComponent implements OnInit, OnDestroy {
-
-  form!: FormGroup
-  post!: IPost
+  form: FormGroup
+  post: PostInterface
   isSubmitted = false
 
-  updateSubscription?: Subscription
+  updateSubscription: Subscription
 
   constructor(
     private route: ActivatedRoute,
@@ -35,25 +34,18 @@ export class EditPageComponent implements OnInit, OnDestroy {
           return this.postService.getById(params['id'])
         })
       )
-      .subscribe((post: IPost) => {
+      .subscribe((post: PostInterface) => {
         this.post = post
         this.form = new FormGroup({
-          title: new FormControl(
-            post.title,
-            Validators.required
-          ),
-          text: new FormControl(
-            post.text,
-            Validators.required
-          )
+          title: new FormControl(post.title, Validators.required),
+          text: new FormControl(post.text, Validators.required)
         })
       })
   }
 
   ngOnDestroy(): void {
     if (this.updateSubscription) {
-      this.updateSubscription
-        .unsubscribe()
+      this.updateSubscription.unsubscribe()
     }
   }
 
@@ -64,11 +56,12 @@ export class EditPageComponent implements OnInit, OnDestroy {
 
     this.isSubmitted = true
 
-    this.updateSubscription = this.postService.update({
-      ...this.post,
-      title: this.form.value.title,
-      text: this.form.value.text
-    })
+    this.updateSubscription = this.postService
+      .update({
+        ...this.post,
+        title: this.form.value.title,
+        text: this.form.value.text
+      })
       .subscribe(() => {
         this.form.reset()
         this.router.navigate(['/admin', 'dashboard'])
@@ -76,5 +69,4 @@ export class EditPageComponent implements OnInit, OnDestroy {
         this.alert.warning('Пост был обновлен')
       })
   }
-
 }

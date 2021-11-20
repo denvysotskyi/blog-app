@@ -4,15 +4,15 @@ import { Observable } from 'rxjs'
 import { switchMap } from 'rxjs/operators'
 
 import { PostService } from '../shared/post.service'
-import { IPost } from '../shared/interfaces'
+import { PostInterface } from '../shared/interfaces/app.interfaces'
 
 @Component({
   selector: 'app-post-page',
   templateUrl: './post-page.component.html',
-  styleUrls: ['./post-page.component.scss'],
+  styleUrls: ['./post-page.component.scss']
 })
 export class PostPageComponent implements OnInit {
-  post$?: Observable<IPost>
+  post$: Observable<PostInterface>
 
   constructor(
     private route: ActivatedRoute,

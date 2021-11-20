@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
 
-import { IPost } from '../shared/interfaces'
+import { PostInterface } from '../shared/interfaces/app.interfaces'
 import { PostService } from '../shared/post.service'
 
 @Component({
@@ -10,13 +10,11 @@ import { PostService } from '../shared/post.service'
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-
-  postArr$?: Observable<IPost[]>
+  postArr$: Observable<PostInterface[]>
 
   constructor(private postService: PostService) {}
 
   ngOnInit(): void {
     this.postArr$ = this.postService.getAll()
   }
-
 }

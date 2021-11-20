@@ -1,29 +1,29 @@
 import { Injectable } from '@angular/core'
 import { Subject } from 'rxjs'
-
-import { IAlert } from '../components/alert/alert.interface'
+import { AlertInterface } from '../../../shared/interfaces/app.interfaces'
 
 @Injectable()
 export class AlertService {
-
-  public alert$ = new Subject<IAlert>()
+  public alert$ = new Subject<AlertInterface>()
 
   success(text: string): void {
     this.alert$.next({
-      type: 'success', text
+      type: 'success',
+      text
     })
   }
 
   warning(text: string): void {
     this.alert$.next({
-      type: 'warning', text
+      type: 'warning',
+      text
     })
   }
 
   danger(text: string): void {
     this.alert$.next({
-      type: 'danger', text
+      type: 'danger',
+      text
     })
   }
-
 }

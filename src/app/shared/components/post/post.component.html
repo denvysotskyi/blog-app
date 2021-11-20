@@ -5,13 +5,12 @@
         {{post.title}}
       </h2>
     </div>
-
     <div class='info'>
       <small class='date'>
         {{post.date | date: 'mediumDate': undefined: 'ua'}}
       </small>
       <small class='name'>
-      {{post.author}}
+        {{post.author}}
       </small>
       <button class='btn btn-danger open'
               [routerLink]="['/post', post.id]"

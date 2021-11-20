@@ -3,20 +3,23 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http'
 import { Observable, Subject, throwError } from 'rxjs'
 import { catchError, tap } from 'rxjs/operators'
 
-import { IFbAuthResponse, IUser } from '../../../shared/interfaces'
+import {
+  FbAuthResponseInterface,
+  PostInterface,
+  UserInterface
+} from '../../../shared/interfaces/app.interfaces'
 import { environment } from '../../../../environments/environment'
+import * as events from 'events'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
   public error$: Subject<string> = new Subject<string>()
 
   constructor(private http: HttpClient) {}
 
   get token(): string | null {
-
     const expDate = new Date(localStorage.getItem('fb-token-exp') as string)
 
     if (new Date() > expDate) {
@@ -26,12 +29,16 @@ export class AuthService {
     return localStorage.getItem('fb-token')
   }
 
-  login(user: IUser): Observable<any> {
+  login(user: UserInterface): Observable<PostInterface> {
     user.returnSecureToken = true
-    return this.http.post<any>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKey}`, user)
+    return this.http
+      .post<PostInterface>(
+        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKey}`,
+        user
+      )
       .pipe(
-        tap(this.setToken as any),
-        catchError(this.handleError.bind(this) as any)
+        tap(this.setToken as events),
+        catchError(this.handleError.bind(this) as events)
       )
   }
 
@@ -43,7 +50,7 @@ export class AuthService {
     return !!this.token
   }
 
-  private handleError(error: HttpErrorResponse): Observable<any> {
+  private handleError(error: HttpErrorResponse): Observable<ErrorEvent> {
     const { message } = error.error.error
 
     switch (message) {
@@ -60,7 +67,7 @@ export class AuthService {
     return throwError(error)
   }
 
-  private setToken(res: IFbAuthResponse | null){
+  private setToken(res: FbAuthResponseInterface | null) {
     if (res) {
       const expDate = new Date(new Date().getTime() + +res.expiresIn * 1000)
       localStorage.setItem('fb-token', res.idToken as string)
@@ -69,5 +76,4 @@ export class AuthService {
       localStorage.clear()
     }
   }
-
 }

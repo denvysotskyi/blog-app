@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { ActivatedRoute, Params, Router } from '@angular/router'
 
-import { IUser } from '../../shared/interfaces'
+import { UserInterface } from '../../shared/interfaces/app.interfaces'
 import { AuthService } from '../shared/services/auth.service'
 
 @Component({
@@ -11,10 +11,9 @@ import { AuthService } from '../shared/services/auth.service'
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
-
-  form!: FormGroup
+  form: FormGroup
   isSubmitted = false
-  message?: string
+  message: string
 
   constructor(
     public auth: AuthService,
@@ -23,20 +22,16 @@ export class LoginPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.queryParams
-      .subscribe((params: Params) => {
-        if (params['loginAgain']) {
-          this.message = 'Пожалуйста, введите данные'
-        } else if (params['authFailed']) {
-          this.message = 'Сессия истекла. Пожалуйста, введите данные заново'
-        }
-      })
+    this.route.queryParams.subscribe((params: Params) => {
+      if (params['loginAgain']) {
+        this.message = 'Пожалуйста, введите данные'
+      } else if (params['authFailed']) {
+        this.message = 'Сессия истекла. Пожалуйста, введите данные заново'
+      }
+    })
 
     this.form = new FormGroup({
-      email: new FormControl('', [
-        Validators.required,
-        Validators.email
-      ]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
         Validators.required,
         Validators.minLength(6)
@@ -51,19 +46,21 @@ export class LoginPageComponent implements OnInit {
 
     this.isSubmitted = true
 
-    const user: IUser = {
+    const user: UserInterface = {
       email: this.form.value.email,
-      password: this.form.value.password
+      password: this.form.value.password,
+      returnSecureToken: this.form.value.returnSecureToken
     }
 
-    this.auth.login(user)
-      .subscribe(() => {
+    this.auth.login(user).subscribe(
+      () => {
         this.form.reset()
         this.router.navigate(['/admin', 'dashboard'])
         this.isSubmitted = false
-      }, () => {
+      },
+      () => {
         this.isSubmitted = false
-      })
+      }
+    )
   }
-
 }

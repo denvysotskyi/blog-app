@@ -9,7 +9,7 @@
     </div>
 
     <div class='form-control'
-         [ngClass]="{ invalid: form.get('title')!.touched && form.get('title')!.invalid }"
+         [ngClass]="{invalid: form.get('title')!.touched && form.get('title').invalid}"
     >
       <label for='title'>
         Название поста:
@@ -20,9 +20,9 @@
              formControlName='title'
       />
       <div class='validation'
-           *ngIf="form.get('title')!.touched && form.get('title')!.invalid"
+           *ngIf="form.get('title').touched && form.get('title').invalid"
       >
-        <small *ngIf="form.get('title')!.errors!.required">
+        <small *ngIf="form.get('title').errors.required">
           Введите корректное название поста
         </small>
       </div>
@@ -38,7 +38,7 @@
     </div>
 
     <div class='form-control'
-         [ngClass]="{ invalid: form.get('author')!.touched && form.get('author')!.invalid }"
+         [ngClass]="{invalid: form.get('author').touched && form.get('author').invalid}"
     >
       <label for='author'>
         Имя автора поста:
@@ -49,9 +49,9 @@
              formControlName='author'
       />
       <div class='validation'
-           *ngIf="form.get('author')!.touched && form.get('author')!.invalid"
+           *ngIf="form.get('author').touched && form.get('author').invalid"
       >
-        <small *ngIf="form.get('author')!.errors!.required">
+        <small *ngIf="form.get('author').errors.required">
           Введите корректное имя автора поста
         </small>
       </div>

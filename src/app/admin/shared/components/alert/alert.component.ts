@@ -1,7 +1,8 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core'
+import { Component, Input, OnDestroy, OnInit } from '@angular/core'
 import { Subscription } from 'rxjs'
 
 import { AlertService } from '../../services/alert.service'
+import { AlertInterface } from '../../../../shared/interfaces/app.interfaces'
 
 @Component({
   selector: 'app-alert',
@@ -9,7 +10,6 @@ import { AlertService } from '../../services/alert.service'
   styleUrls: ['./alert.component.scss']
 })
 export class AlertComponent implements OnInit, OnDestroy {
-
   @Input() delay = 3000
 
   public text = ''
@@ -20,8 +20,8 @@ export class AlertComponent implements OnInit, OnDestroy {
   constructor(private alertService: AlertService) {}
 
   ngOnInit(): void {
-    this.alertSubscription = this.alertService.alert$
-      .subscribe(alert => {
+    this.alertSubscription = this.alertService.alert$.subscribe(
+      (alert: AlertInterface) => {
         this.text = alert.text
         this.type = alert.type
 
@@ -29,14 +29,13 @@ export class AlertComponent implements OnInit, OnDestroy {
           clearTimeout(timeout)
           this.text = ''
         }, this.delay)
-      })
+      }
+    )
   }
 
   ngOnDestroy(): void {
     if (this.alertSubscription) {
-      this.alertSubscription
-        .unsubscribe()
+      this.alertSubscription.unsubscribe()
     }
   }
-
 }
