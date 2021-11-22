@@ -1,8 +1,8 @@
 import { NgModule, Provider } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
-import { HTTP_INTERCEPTORS } from '@angular/common/http'
-import { registerLocaleData } from '@angular/common'
 import { ServiceWorkerModule } from '@angular/service-worker'
+import { registerLocaleData } from '@angular/common'
+import { HTTP_INTERCEPTORS } from '@angular/common/http'
 import uaLocale from '@angular/common/locales/ru-UA'
 
 import { AppComponent } from './app.component'
