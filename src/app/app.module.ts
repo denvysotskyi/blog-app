@@ -20,8 +20,8 @@ registerLocaleData(uaLocale, 'ua')
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
-  multi: true,
   useClass: AuthInterceptor,
+  multi: true
 }
 
 @NgModule({
@@ -31,7 +31,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     HomePageComponent,
     PostPageComponent,
     PostComponent,
-    ErrorPageComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
@@ -41,10 +41,10 @@ const INTERCEPTOR_PROVIDER: Provider = {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000',
-    }),
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [INTERCEPTOR_PROVIDER],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
